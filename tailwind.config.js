@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primaryUserColor:"#7856ff",
         primary: {
           DEFAULT: "#7856ff",
           foreground: "hsl(var(--primary-foreground))",
@@ -55,6 +56,7 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      
     },
   },
   plugins: [require("tailwindcss-animate")],

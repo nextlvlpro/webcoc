@@ -1,8 +1,10 @@
+
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
 //components (app/components)
-import Navbar from "./components/Navbar";
+import Navbar from "../components/pages/Navbar";
+import { Toaster } from "sonner";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,10 +17,12 @@ export const metadata = {
     "Dive into the world of Clash of Clans with detailed insights about players, clans, and global leaderboards. Perfect for players and fans alike!",
 };
 
+// app/layout.js
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body>
+      <Toaster />
         <Navbar />
         {children}
       </body>

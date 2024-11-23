@@ -1,19 +1,20 @@
-
-import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import TopPlayers from "./TopPlayers";
+import Loading from "@/components/pages/Loading";
 
 const Players = () => {
   return (
-    <main>
-      <h2>Browse Players</h2>
-      <div>
-        <h3>Top Players</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <TopPlayers/>
+    <Suspense fallback={<Loading />}>
+      <main className="topWrapper text-white px-10">
+        <h2 className="py-2">Browse Players</h2>
+        <div>
+          <h3>Top Players</h3>
+          <div className="pb-10 pt-2">
+            <TopPlayers />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </Suspense>
   );
 };
 
